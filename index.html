@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TaleTide</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>TaleTide</h1>
+      <div id="currentUserInfo"></div>
+    </header>
+
+    <main>
+      <aside class="panel auth-panel">
+        <section id="auth-forms">
+          <div class="card">
+            <h2>Register</h2>
+            <input id="reg-username" placeholder="Username (unique)" />
+            <input id="reg-password" placeholder="Password" type="password" />
+            <button id="btn-register">Register</button>
+            <small id="reg-msg" class="msg"></small>
+          </div>
+
+          <div class="card">
+            <h2>Login</h2>
+            <input id="login-username" placeholder="Username" />
+            <input id="login-password" placeholder="Password" type="password" />
+            <button id="btn-login">Login</button>
+            <small id="login-msg" class="msg"></small>
+          </div>
+        </section>
+
+        <section class="card users-card">
+          <h3>Registered Users</h3>
+          <ul id="users-list"></ul>
+        </section>
+      </aside>
+
+      <section class="panel chat-panel">
+        <div class="card chat-header">
+          <div>
+            <strong id="chat-with">Not logged in</strong>
+            <div id="subtitle">Select a user to chat with.</div>
+          </div>
+          <div>
+            <button id="btn-logout" class="small">Logout</button>
+          </div>
+        </div>
+
+        <div id="chat-window" class="chat-window card">
+          <div id="messages"></div>
+        </div>
+
+        <div class="card composer">
+          <select id="recipient"></select>
+          <input id="message-input" placeholder="Type a message..." />
+          <button id="btn-send">Send</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>Client-only demo • Now backed by Firebase Realtime Database (for multi-device)</small>
+    </footer>
+  </div>
+
+  <!-- Load app as a module so we can import Firebase modular SDK -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
